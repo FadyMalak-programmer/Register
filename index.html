@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Register</title>
+        <link rel="stylesheet" href="Css/styleRegister.css">
+        <script>
+            function checkForm(form)
+            {
+              if(form.name.value == "") 
+              {
+                alert("Error: your name is empty!");
+                form.name.focus();
+                return false;
+              }
+              var re = /^[\w ]+$/;
+          
+              if(!re.test(form.name.value)) 
+              {
+                alert("Error: Your Name Contains invalid Characters!");
+                form.name.focus();
+                return false;
+              }
+              if(form.phone.value == "") 
+              {
+                alert("Error: Phone Number is Empty!");
+                form.phone.focus();
+                return false;
+              }
+              if(form.password.value == "") 
+              {
+                alert("Error: Password is Empty!");
+                form.password.focus();
+                return false;
+              }
+
+              return true;
+            }
+          </script>
+    </head>
+    <body>
+        <header class="header">
+            <div class="Logo">
+                <img src="Photos/Logo.png" alt="Logo" width="60px" height="60px">&nbsp;&nbsp;&nbsp;&nbsp;<h1>Tourism</h1>
+            </div>
+            <hr>
+        </header>
+        <div class="body" >
+            <br><br><br><br><br>
+            <div class="welcome" id="part">
+                <center><h1>Tourism</h1></center>
+                <p>See All The Tourist Places In The World From Here.</p>
+            </div>
+            <center>
+                <div class="form" id="fady-app" id="part">
+                    <form method="POST" action="../Home Page/Home Page.html" onsubmit="return checkForm(this);">
+                        <fieldset>
+                            <legend>Personal Information</legend>
+                            <br>
+                            <input class="input" type="text" name="name" placeholder="Name"><br>
+                            <input class="input" type="email" name="email" placeholder="E-mail"><br>
+                            <input class="input" type="tel" name="phone" placeholder="Phone Number"  ><br>
+                            <input class="input" type="password" name="password" placeholder="Password"><br>
+                            <input class="input" type="date" ><br>
+                            <label>Gender</label><br><br>
+                            <input class="radio" type="radio" name="male"><span>Male</span>
+                            <input class="radio" type="radio" name="male"><span>Female</span><br><br>
+                            <input class="radio" type="checkbox" name="Remember"><span>Remember</span><br><br>
+                            <input class="sign" type="submit" value="REGISTER">
+                            <p>You have account ?&nbsp;&nbsp;&nbsp;<a href="../Login/log in.html">Login</a></p>
+                        </fieldset>
+                    </form>
+                </div>
+            </center>
+        </div>
+        <div class="clear"></div>
+        <footer>
+            Faculty of Computers and Artificial Intelligence, Helwan University<br>
+            <p>Copyright &copy; 2020</p>
+        </footer>
+    </body>
+</html>
